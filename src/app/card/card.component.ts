@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+  //Para ingresar valores a un componente [ De padre a hijo ]
   @Input()
   id:number = 0;
 
@@ -18,6 +19,9 @@ export class CardComponent implements OnInit {
 
   @Input()
   precio:number = 0;
+
+  @Input()
+  urlImage:string = '';
 
   constructor() { }
 

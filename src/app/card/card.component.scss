@@ -1,0 +1,33 @@
+:host { //Selector para la etiqueta app-card
+    display: inline-block;
+    max-width: 230px;
+
+    .product {
+        width: 100%;
+        border: 1px solid black;
+
+        .header {
+            .image {
+            }
+        }
+
+        .body {
+            .title {
+            }
+
+            .description {
+            }
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            .price {
+            }
+
+            .action-buy {
+            }
+        }
+    }
+}
