@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Precio</th>
+      <th>Stock</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- let i = index-->
+    <tr *ngFor="let producto of productosTitulos; index as i;"
+      [ngClass]="{'seleccionado' : producto.seleccionado == true }">
+      <td [ngStyle]="{fontWeight: producto.precio > 1000 ? 'bold' : 'normal' }">{{producto.titulo}}</td>
+      <td [ngClass]="{'rojo': producto.precio < 500, 'verde': producto.precio >= 500 }">{{producto.precio}}</td>
+      <td [class.azul]="producto.cantidad > 50"> {{producto.cantidad}}</td>
+      <td><button (click)="mostrar(producto.titulo)">Mostrar</button></td>
+      <td><button (click)="seleccionar(producto, i)">Seleccionar</button></td>
+    </tr>
+  </tbody>
+</table>

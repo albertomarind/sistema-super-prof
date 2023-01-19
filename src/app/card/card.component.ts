@@ -8,16 +8,19 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardComponent implements OnInit {
 
   @Input()
-  id:number = 0;
+  id: number = 0;
 
   @Input()
-  titulo:string = '';
+  titulo: string = '';
 
   @Input()
-  descripcion:string = '';
+  descripcion: string = '';
 
   @Input()
-  precio:number = 0;
+  precio: number = 0;
+
+  @Input()
+  photo: string = '';
 
   constructor() { }
 

@@ -1,3 +1,9 @@
 <h1>Hello World!</h1>
+<div class="card-content">
+  <app-card *ngFor="let producto of productos" [titulo]="producto.titulo" [descripcion]="producto.descripcion"
+    [precio]="producto.precio" [photo]="producto.photo">
+  </app-card>
+</div>
+<app-lista-productos>
 
-<app-card *ngFor="let producto of productos" [titulo]="producto.titulo" [descripcion]="producto.descripcion" [precio]="producto.precio"></app-card>
+</app-lista-productos>

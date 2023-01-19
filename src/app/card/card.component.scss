@@ -1,0 +1,31 @@
+.card{
+    width: 20vw;
+    background-color: #D9CBBA;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 10px;
+}
+
+.photo-product{
+    width: 20vw;
+    height: 250px;
+}
+
+.card{
+
+     h1{
+        margin: 30px;
+        color: #592D1D;
+    }
+    p{
+        margin: 30px;
+        color:#A65C41;
+        padding: 25px;
+    }
+    label{
+        background-color: #D9A273;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        color:#F2E6D8;
+        padding: 15px;
+    }
+}
