@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { PostService } from './post.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   productos: any[] = [
     {
@@ -51,4 +53,30 @@ export class AppComponent {
       precio: 20.53
     }
   ];
+
+  constructor(private postService: PostService) {
+
+  }
+
+  ngOnInit(): void {
+    this.postService.getPosts().subscribe(
+      (result: any[]) => {
+        console.log(result);
+        let resultadoTransformado = result.map(r => {
+          return {
+            name: r.name,
+            email: r.email
+          }
+        });
+        console.log(resultadoTransformado);
+      },
+      (error: HttpErrorResponse) => {
+        console.error(error);
+      },
+      () => {
+        console.log('Completado');
+      }
+    )
+  }
+
 }
