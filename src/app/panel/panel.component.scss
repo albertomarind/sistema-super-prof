@@ -1,0 +1,22 @@
+.panel {
+  .panel-header, .panel-body {
+    border: 1px solid #dee2e6;
+    padding: 1.25rem;
+  }
+
+  .panel-header {
+    background: #f8f9fa;
+    color: #343a40;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+
+  }
+
+  .panel-body {
+    background: #ffffff;
+    color: #495057;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top: 0 none;
+  }
+}

@@ -1,21 +1,54 @@
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Titulo</th>
       <th>Precio</th>
+      <th>Descuento</th>
       <th>Stock</th>
       <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
     <!-- let i = index-->
-    <tr *ngFor="let producto of productosTitulos; index as i;"
-      [ngClass]="{'seleccionado' : producto.seleccionado == true }">
+    <tr *ngFor="let producto of productosTitulos; index as i;" [ngClass]="{'seleccionado' : producto.seleccionado}">
       <td [ngStyle]="{fontWeight: producto.precio > 1000 ? 'bold' : 'normal' }">{{producto.titulo}}</td>
       <td [ngClass]="{'rojo': producto.precio < 500, 'verde': producto.precio >= 500 }">{{producto.precio}}</td>
-      <td [class.azul]="producto.cantidad > 50"> {{producto.cantidad}}</td>
-      <td><button (click)="mostrar(producto.titulo)">Mostrar</button></td>
-      <td><button (click)="seleccionar(producto, i)">Seleccionar</button></td>
+      <td>
+        <ng-container *ngIf="producto.descuento > 15; else elseBlock">
+          {{producto.descuento}}
+        </ng-container>
+      </td>
+      <td [class.azul]="producto.cantidad > 50"> {{producto.cantidad}}
+        <ng-container [ngSwitch]="producto.cantidad">
+          <ng-container *ngSwitchCase="150">
+            <span>Hay suficientes unidades</span>
+          </ng-container>
+          <div *ngSwitchCase="140">
+            Unidades por agotar
+          </div>
+          <ng-container *ngSwitchCase="110">
+            Hay pocas unidades
+          </ng-container>
+          <ng-container *ngSwitchDefault>No aplica</ng-container>
+        </ng-container>
+      </td>
+      <td>
+        <button class="btn btn-primary" (click)="mostrar(producto.titulo)">Mostrar</button>
+        <button class="btn btn-secondary" (click)="seleccionar(producto, i)">Seleccionar</button>
+      </td>
+
     </tr>
   </tbody>
 </table>
+
+
+<ng-template #elseBlock>No existe descuento</ng-template>
+
+<!-- 
+<div class="d-flex">
+  <div></div>
+  <div></div>
+  <div></div>
+  texto
+  <ng-container></ng-container>
+</div> -->

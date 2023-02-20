@@ -1,3 +1,31 @@
+<app-top-navbar></app-top-navbar>
+<div class="row">
+  <div class="col-2">
+    <app-menu-sidebar></app-menu-sidebar>
+  </div>
+  <div class="col-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<div class="container">
+
+  <app-panel>
+    <div header class="flex">
+      <label>Titulo</label>
+      <i class="fa-solid fa-gear"></i>
+    </div>
+    <p content>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur beatae, consectetur deleniti
+      distinctio ducimus eos excepturi iure nesciunt nisi porro quia quod rem repellat repudiandae rerum suscipit ullam,
+      vel?</p>
+  </app-panel>
+
+</div>
+
+
+
+<!-- <app-selector-dias-semana (diaSeleccionadoEvent)="mostrarDiaSeleccionado($event)"></app-selector-dias-semana>
+
 <h1>Hello World!</h1>
 <div class="card-content">
   <app-card *ngFor="let producto of productos" [titulo]="producto.titulo" [descripcion]="producto.descripcion"
@@ -7,3 +35,13 @@
 <app-lista-productos>
 
 </app-lista-productos>
+
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div> -->

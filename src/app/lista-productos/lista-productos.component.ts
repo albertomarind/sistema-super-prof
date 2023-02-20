@@ -21,10 +21,11 @@ export class ListaProductosComponent implements OnInit {
             precio: producto.price,
             cantidad: producto.stock,
             seleccionado: false,
+            descuento:producto.discountPercentage
           }
         });
         this.productosTitulos = productosTitulos;
-        console.log(productosTitulos);
+        //console.log(productosTitulos);
       },
       (error: HttpErrorResponse) => {
         console.error(error);
@@ -40,8 +41,8 @@ export class ListaProductosComponent implements OnInit {
   }
 
   seleccionar(producto: any, indice: number) {
-    let productoEncontrado = this.productosTitulos.find(producto => producto.seleccionado == true);
-    if (productoEncontrado != undefined) {
+    let productoEncontrado = this.productosTitulos.find(producto => producto.seleccionado);
+    if (productoEncontrado) {
       productoEncontrado.seleccionado = false;
     }
     producto.seleccionado = true;

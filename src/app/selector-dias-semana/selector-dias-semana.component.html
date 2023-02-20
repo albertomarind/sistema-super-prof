@@ -1,0 +1,4 @@
+<div class="dia-semana" [class.seleccionado]="diaSemana['seleccionado']" 
+ *ngFor="let diaSemana of diasSemana" (click)="seleccionar(diaSemana)">
+    <span>{{diaSemana.caracter}}</span>
+</div>
