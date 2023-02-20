@@ -17,7 +17,7 @@ export class ProductosPromiseService {
         let response = JSON.parse(xhttp.responseText);
         resolve(response);
       };
-      xhttp.open('GET', 'https://dummyjson.com/produ55555cts');
+      xhttp.open('GET', 'https://dummyjson.com/products');
       xhttp.send();
     });
   }
